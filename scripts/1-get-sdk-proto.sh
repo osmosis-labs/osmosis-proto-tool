@@ -9,7 +9,7 @@ ZIP_FILE="$COSMOS_DIR/tmp.zip"
 
 COSMOS_SDK_VERSION="0.47.1"
 
-mkdir -p "$COSMOS_SDK_DIR"
+mkdir -p "$COSMOS_DIR"
 
 wget -qO "$ZIP_FILE" "https://github.com/cosmos/cosmos-sdk/archive/v$COSMOS_SDK_VERSION.zip"
 unzip "$ZIP_FILE" "*.proto" -d "$COSMOS_DIR"

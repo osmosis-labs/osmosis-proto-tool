@@ -7,3 +7,7 @@ prod
 build
 yarn-error.log
 .yarn
+
+output
+proto/cosmos
+tmp

@@ -1,0 +1,11 @@
+{
+  "name": "test",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+  },
+  "dependencies": {
+    "protobufjs": "^6.10.2",
+    "typescript": "4.1.5"
+  }
+}

@@ -27,4 +27,26 @@ if [ $# -gt 0 ]; then
 fi
 
 mv osmosis/proto/osmosis "$COSMOS_SDK_DIR/proto/osmosis"
-rm -rf osmosis
+
+# Extract the IBC Go version from the go.mod file
+IBC_GO_VERSION=$(awk '/github.com\/cosmos\/ibc-go/ {print $2}' osmosis/go.mod)
+
+# Clone IBC Go repository and checkout to the extracted version
+git clone https://github.com/cosmos/ibc-go.git
+git -C -q ibc-go checkout "$IBC_GO_VERSION"
+
+# Move IBC Go proto files into the $COSMOS_SDK_DIR/proto directory
+mv ibc-go/proto/* "$COSMOS_SDK_DIR/proto/"
+
+# Extract the Wasmd version from the go.mod file
+WASMD_VERSION=$(awk '/github.com\/osmosis-labs\/wasmd/ {print $2}' osmosis/go.mod)
+
+# Clone Wasmd repository and checkout to the extracted version
+git clone https://github.com/osmosislabs/wasmd.git
+git -C -q wasmd checkout "$WASMD_VERSION"
+
+# Move Wasmd proto files into the $COSMOS_SDK_DIR/proto directory
+mv wasmd/proto/* "$COSMOS_SDK_DIR/proto/"
+
+# Cleanup
+rm -rf osmosis ibc-go wasmd

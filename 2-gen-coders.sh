@@ -22,8 +22,10 @@ yarn pbjs \
   --no-delimited \
   --force-long \
   "$COSMOS_PROTO_DIR/base/v1beta1/coin.proto" \
+  "$COSMOS_PROTO_DIR/base/query/v1beta1/pagination.proto" \
   "$COSMOS_PROTO_DIR/bank/v1beta1/bank.proto" \
-  "$OSMOSIS_PROTO_DIR/gamm/v1beta1/tx.proto" \
+  "$OSMOSIS_PROTO_DIR/poolmanager/v1beta1/tx.proto" \
+  "$OSMOSIS_PROTO_DIR/poolmanager/v1beta1/swap_route.proto" \
   "$OSMOSIS_PROTO_DIR/gamm/pool-models/balancer/balancerPool.proto" \
   "$OSMOSIS_PROTO_DIR/gamm/pool-models/balancer/tx/tx.proto" \
   "$OSMOSIS_PROTO_DIR/gamm/pool-models/stableswap/stableswap_pool.proto" \

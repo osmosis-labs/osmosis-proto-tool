@@ -57,3 +57,7 @@ yarn pbjs \
   --no-delimited \
   --force-long \
   "${PROTO_FILES[@]}"
+
+# Work around https://github.com/protobufjs/protobuf.js/issues/1477
+# shellcheck disable=SC2016
+sed -i "" -e 's/^const \$root =.*$/const \$root = {};/' "$GENERATED_DIR/codecimpl.js"

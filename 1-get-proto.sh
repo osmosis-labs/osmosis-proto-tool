@@ -7,6 +7,8 @@ COSMOS_DIR="$PROTO_DIR/cosmos"
 COSMOS_SDK_DIR="$COSMOS_DIR/cosmos-sdk"
 COSMOS_SDK_VERSION="v0.47.1"
 
+rm -rf $PROTO_DIR
+
 mkdir -p repos
 mkdir -p "$COSMOS_SDK_DIR/proto"
 
@@ -27,7 +29,7 @@ else
 fi
 
 # Move the protos folder to the desired destination
-cp -R repos/cosmos-sdk/proto/cosmos "$COSMOS_SDK_DIR/proto/cosmos" || true
+cp -fR repos/cosmos-sdk/proto/cosmos "$COSMOS_SDK_DIR/proto/cosmos" || true
 
 
 # OSMOSIS PROTOS
@@ -52,7 +54,7 @@ if [ $# -gt 0 ]; then
 fi
 
 # Move the osmosis/proto/osmosis folder to the desired destination
-cp -R repos/osmosis/proto/osmosis "$COSMOS_SDK_DIR/proto/osmosis" || true
+cp -fR repos/osmosis/proto/osmosis "$COSMOS_SDK_DIR/proto/osmosis" || true
 
 
 # IBC PROTOS
@@ -73,7 +75,7 @@ else
 fi
 
 # Move IBC Go proto files into the $COSMOS_SDK_DIR/proto directory
-cp -R repos/ibc-go/proto/* "$COSMOS_SDK_DIR/proto/" || true
+cp -fR repos/ibc-go/proto/* "$COSMOS_SDK_DIR/proto/" || true
 
 
 # WASMD PROTOS
@@ -96,4 +98,4 @@ fi
 
 # Move Wasmd proto files into the $COSMOS_SDK_DIR/proto directory
 mkdir -p $COSMOS_SDK_DIR/proto/cosmwasm/
-cp -R repos/wasmd/proto/cosmwasm/wasm/v1/* "$COSMOS_SDK_DIR/proto/cosmwasm/" || true
+cp -fR repos/wasmd/proto/cosmwasm/wasm/v1/* "$COSMOS_SDK_DIR/proto/cosmwasm/" || true

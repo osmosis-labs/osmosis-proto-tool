@@ -23,6 +23,7 @@ PROTO_FILES=(
   "$COSMOS_PROTO_DIR/bank/v1beta1/bank.proto"
   "$OSMOSIS_PROTO_DIR/poolmanager/v1beta1/tx.proto"
   "$OSMOSIS_PROTO_DIR/poolmanager/v1beta1/swap_route.proto"
+  "$OSMOSIS_PROTO_DIR/gamm/v1beta1/tx.proto"
   "$OSMOSIS_PROTO_DIR/gamm/pool-models/balancer/balancerPool.proto"
   "$OSMOSIS_PROTO_DIR/gamm/pool-models/balancer/tx/tx.proto"
   "$OSMOSIS_PROTO_DIR/gamm/pool-models/stableswap/stableswap_pool.proto"
